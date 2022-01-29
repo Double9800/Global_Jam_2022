@@ -18,17 +18,22 @@ public class PlayerMovement : MonoBehaviour
     private bool isCrouch;
     public Vector2 ColliderSizeCrouch ,ColliderPosCrouch,ColliderSizeInitial,ColliderPosInitioal;
     private BoxCollider2D myBox;
+    private SpriteRenderer Mysprite;
 
     // Start is called before the first frame update
     void Start()
     {
+        isCrouch = false;
         rb = GetComponent<Rigidbody2D>();
         myBox = GetComponent<BoxCollider2D>();
+        Mysprite = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
     {
-        if(isCrouch == false)
+
+
+        if (isCrouch == false)
         {
             movementInput = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(movementInput * speed, rb.velocity.y);
@@ -58,20 +63,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementInput > 0)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            Mysprite.flipX = false;
+
         } else if (movementInput < 0)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            Mysprite.flipX = true;
+            Debug.Log("Dietro");
         }
 
         
-       //Vector3 moveDirection = rb.velocity;
-       //
-       //if (moveDirection != Vector3.zero)
-       //{
-       //    float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-       //    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-       //}
+
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
