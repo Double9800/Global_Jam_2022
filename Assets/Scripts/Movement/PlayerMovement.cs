@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(movementInput * speed, rb.velocity.y);
+        Debug.Log(rb.velocity);
     }
 
     // Update is called once per frame
@@ -33,13 +34,21 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(feet.position, radius, isMask);
 
-        if(movementInput > 0)
+        if (movementInput > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
-        }else if (movementInput < 0)
+        } else if (movementInput < 0)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
+
+       //Vector2 moveDirection = rb.velocity;
+       //
+       //if (moveDirection != Vector2.zero)
+       //{
+       //    float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+       //    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+       //}
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
