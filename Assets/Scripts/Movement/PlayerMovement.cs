@@ -15,40 +15,64 @@ public class PlayerMovement : MonoBehaviour
     public Transform feet;
     public float radius;
     public float jumpSpeed;
+    private bool isCrouch;
+    public Vector2 ColliderSizeCrouch ,ColliderPosCrouch,ColliderSizeInitial,ColliderPosInitioal;
+    private BoxCollider2D myBox;
+    private SpriteRenderer Mysprite;
 
     // Start is called before the first frame update
     void Start()
     {
+        isCrouch = false;
         rb = GetComponent<Rigidbody2D>();
+        myBox = GetComponent<BoxCollider2D>();
+        Mysprite = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
     {
-        movementInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(movementInput * speed, rb.velocity.y);
-        Debug.Log(rb.velocity);
+
+
+        if (isCrouch == false)
+        {
+            movementInput = Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(movementInput * speed, rb.velocity.y);
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKey(KeyCode.C) && isGrounded)
+        {
+            Debug.Log("Mi accovaccio");
+            isCrouch = true;
+            myBox.size = ColliderSizeCrouch;
+            myBox.offset = ColliderPosCrouch;
+        }
+        if (Input.GetKeyUp(KeyCode.C) && isGrounded)
+        {
+            Debug.Log("MiAlzo");
+            isCrouch = false;
+            myBox.size = ColliderSizeInitial;
+            myBox.offset = ColliderPosInitioal;
+        }
         isGrounded = Physics2D.OverlapCircle(feet.position, radius, isMask);
 
         if (movementInput > 0)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            Mysprite.flipX = false;
+
         } else if (movementInput < 0)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            Mysprite.flipX = true;
+            Debug.Log("Dietro");
         }
 
-       //Vector2 moveDirection = rb.velocity;
-       //
-       //if (moveDirection != Vector2.zero)
-       //{
-       //    float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-       //    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-       //}
+        
+
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
@@ -75,4 +99,5 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
         }
     }
+
 }

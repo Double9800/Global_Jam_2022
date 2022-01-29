@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 6620972054381436597}
   - component: {fileID: 746295632886602593}
   - component: {fileID: 8486878544030813930}
+  - component: {fileID: 7417370074912782776}
   m_Layer: 0
   m_Name: PlayerCat
   m_TagString: Untagged
@@ -185,6 +186,10 @@ MonoBehaviour:
   feet: {fileID: 4681181137622352163}
   radius: 0.2
   jumpSpeed: 15
+  ColliderSizeCrouch: {x: 1.38, y: 0.77}
+  ColliderPosCrouch: {x: 0, y: -1}
+  ColliderSizeInitial: {x: 1.38, y: 2.11}
+  ColliderPosInitioal: {x: 0, y: -0.3}
 --- !u!114 &746295632886602593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +220,21 @@ MonoBehaviour:
   player: {fileID: 3108509482984573260}
   RespawnPoint: {fileID: 0}
   RigidB: {fileID: 8334784184473707198}
+--- !u!114 &7417370074912782776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261529428961310256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0386a2b8e69eec4b8a5bb0c63718d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -20
+  speed: 5
+  jump: 5
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 8
