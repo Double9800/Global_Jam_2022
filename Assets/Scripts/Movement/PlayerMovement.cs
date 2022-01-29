@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 ColliderSizeCrouch ,ColliderPosCrouch,ColliderSizeInitial,ColliderPosInitioal;
     private BoxCollider2D myBox;
     private SpriteRenderer Mysprite;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myBox = GetComponent<BoxCollider2D>();
         Mysprite = GetComponent<SpriteRenderer>();
+       
     }
 
     private void FixedUpdate()
@@ -68,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         } else if (movementInput < 0)
         {
             Mysprite.flipX = true;
-            Debug.Log("Dietro");
+            
         }
 
         

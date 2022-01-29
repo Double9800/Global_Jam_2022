@@ -7,12 +7,12 @@ public class PlayerHealth : MonoBehaviour
     public int lifeCounter;
     public GameObject deathPlatrofm;
     private Vector3 deathPosition;
-    private RespawnBase myRespawn;
+    private Respawn MySpawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        myRespawn = FindObjectOfType<RespawnBase>();
+        MySpawnPoint = GetComponent<Respawn>();
         lifeCounter = 9;
     }
 
@@ -39,7 +39,8 @@ public class PlayerHealth : MonoBehaviour
             Instantiate(deathPlatrofm, deathPosition, Quaternion.identity);
             lifeCounter -= 1;
             Debug.Log(lifeCounter);
-            myRespawn.RespawnAction();
+            MySpawnPoint.RespawnAction();
+
         }
         else
         {

@@ -55,8 +55,8 @@ public class GroundRotation : MonoBehaviour
         Vector2 rayOrigin = (Mathf.Sign(deltaMovement.x) == -1) ? centerLeft : centerRight;
         rayOrigin.x += deltaMovement.x;
         //Unity says the y coordinates of both of these points are the same
-        print(center);
-        print(centerLeft);
+        //print(center);
+        //print(centerLeft);
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, transform.up * directionY, rayLength, collisionMask);
         Debug.DrawRay(rayOrigin, transform.up * directionY * rayLength, Color.red);
 
@@ -80,8 +80,8 @@ public class GroundRotation : MonoBehaviour
         Vector2 rayOrigin = (Mathf.Sign(deltaMovement.x) == 1) ? centerLeft : centerRight;
         rayOrigin.x += deltaMovement.x;
         //Unity says the y coordinates of both of these points are the same
-        print(center);
-        print(centerLeft);
+        //print(center);
+        //print(centerLeft);
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, transform.up * directionY, rayLength, collisionMask);
         Debug.DrawRay(rayOrigin, transform.up * directionY * rayLength, Color.red);
 
