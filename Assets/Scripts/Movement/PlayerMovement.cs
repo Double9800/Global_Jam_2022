@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             jumpTimeMax = jumpTime;
             rb.velocity = Vector2.up * jumpSpeed;
         }
-        if (Input.GetKeyDown(KeyCode.Space)&& isJumping == true)
+        if (Input.GetKey(KeyCode.Space)&& isJumping == true)
         {
             if (jumpTimeMax > 0)
             {
