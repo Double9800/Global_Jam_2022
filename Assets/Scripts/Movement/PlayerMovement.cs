@@ -32,6 +32,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feet.position, radius, isMask);
+
+        if(movementInput > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }else if (movementInput < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             isJumping = true;
