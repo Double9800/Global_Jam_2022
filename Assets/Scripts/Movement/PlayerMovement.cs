@@ -77,11 +77,11 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.D) )
+        if (Input.GetKey(KeyCode.D) )
         {
             Myanim.SetBool("Move", true);
         }
-        if (Input.GetKeyDown(KeyCode.A) )
+        if (Input.GetKey(KeyCode.A) )
         {
             Myanim.SetBool("Move", true);
         }
