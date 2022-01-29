@@ -185,6 +185,10 @@ MonoBehaviour:
   feet: {fileID: 4681181137622352163}
   radius: 0.2
   jumpSpeed: 15
+  ColliderSizeCrouch: {x: 1.38, y: 0.77}
+  ColliderPosCrouch: {x: 0, y: -1}
+  ColliderSizeInitial: {x: 1.38, y: 2.11}
+  ColliderPosInitioal: {x: 0, y: -0.3}
 --- !u!114 &746295632886602593
 MonoBehaviour:
   m_ObjectHideFlags: 0
