@@ -23,7 +23,14 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Death();
-            myRespawn.RespawnAction();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Damage")
+        {
+            Death();
         }
     }
     public void Death()
@@ -33,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
             Instantiate(deathPlatrofm, deathPosition, Quaternion.identity);
             lifeCounter -= 1;
             Debug.Log(lifeCounter);
+            myRespawn.RespawnAction();
         }
         else
         {
