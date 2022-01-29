@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 ColliderSizeCrouch ,ColliderPosCrouch,ColliderSizeInitial,ColliderPosInitioal;
     private BoxCollider2D myBox;
     private SpriteRenderer Mysprite;
+    private Animator Myanim;
     
 
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myBox = GetComponent<BoxCollider2D>();
         Mysprite = GetComponent<SpriteRenderer>();
+        Myanim = GetComponent<Animator>();
        
     }
 
@@ -66,18 +68,38 @@ public class PlayerMovement : MonoBehaviour
         if (movementInput > 0)
         {
             Mysprite.flipX = false;
+            //Myanim.Play("Movement");
 
         } else if (movementInput < 0)
         {
             Mysprite.flipX = true;
-            
+            //Myanim.Play("Movement");
+
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.D) )
+        {
+            Myanim.SetBool("Move", true);
+        }
+        if (Input.GetKeyDown(KeyCode.A) )
+        {
+            Myanim.SetBool("Move", true);
+        }
+        if (Input.GetKeyUp(KeyCode.D) )
+        {
+            Myanim.SetBool("Move", false);
+        }
+        if (Input.GetKeyUp(KeyCode.A) )
+        {
+            Myanim.SetBool("Move", false);
+        }
+
+
 
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
+            Myanim.Play("Jump");
             isJumping = true;
             jumpTimeMax = jumpTime;
             rb.velocity = Vector2.up * jumpSpeed;
@@ -99,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+            
         }
     }
 
