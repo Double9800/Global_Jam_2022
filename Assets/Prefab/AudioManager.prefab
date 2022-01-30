@@ -46,7 +46,7 @@ MonoBehaviour:
   sounds:
   - name: CityBackground
     clip: {fileID: 8300000, guid: f1fd8f27377530345a9f32b48c37e223, type: 3}
-    volume: 0.5
+    volume: 0.65
     loop: 1
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
     AudioMixer: {fileID: 0}
   - name: JumpStart
     clip: {fileID: 8300000, guid: 1015b4dd588ebee45a5799aaac95affc, type: 3}
-    volume: 1
+    volume: 0.75
     loop: 0
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
@@ -70,25 +70,19 @@ MonoBehaviour:
     AudioMixer: {fileID: 0}
   - name: Milk
     clip: {fileID: 8300000, guid: 38ee64780b7fa624691f1f456ecac33a, type: 3}
-    volume: 1
+    volume: 0.7
     loop: 0
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
   - name: JumpEnd
     clip: {fileID: 8300000, guid: b5e4b77402afe9e42be4a56a68eb5fc7, type: 3}
-    volume: 1
+    volume: 0.7
     loop: 0
-    source: {fileID: 0}
-    AudioMixer: {fileID: 0}
-  - name: Walk
-    clip: {fileID: 8300000, guid: 8195401038a730b4ebec41561b1d4e7f, type: 3}
-    volume: 1
-    loop: 1
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
   - name: CatDeath
     clip: {fileID: 8300000, guid: 5e69109182dbfa840a77908cb66c67af, type: 3}
-    volume: 1
+    volume: 0.6
     loop: 0
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
@@ -106,7 +100,31 @@ MonoBehaviour:
     AudioMixer: {fileID: 0}
   - name: CatRespawn
     clip: {fileID: 8300000, guid: 29b5f756d497a7746bdf823e39a88c15, type: 3}
-    volume: 1
+    volume: 0.8
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Walk1
+    clip: {fileID: 8300000, guid: 78df1049298146348aca29992d795207, type: 3}
+    volume: 0.4
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Walk2
+    clip: {fileID: 8300000, guid: d6bd1977885120740b62abdcdf2b027e, type: 3}
+    volume: 0.4
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Walk3
+    clip: {fileID: 8300000, guid: f87add4d0ae7ea54e814b28bab8e6b27, type: 3}
+    volume: 0.4
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Walk4
+    clip: {fileID: 8300000, guid: fd65981840778be4896bb827613b222e, type: 3}
+    volume: 0.4
     loop: 0
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
