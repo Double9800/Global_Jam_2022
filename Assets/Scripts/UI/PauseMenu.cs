@@ -11,9 +11,9 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        HUD.SetActive(true);
         MyPlayer = FindObjectOfType<PlayerHealth>();
         PauseMenuUI.SetActive(false);
-        HUD.SetActive(true);
     }
 
     // Update is called once per frame
@@ -53,8 +53,10 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
+        HUD.SetActive(true);
         //SceneManager.LoadScene(0);
         MyPlayer.transform.position = MyPlayer.SpawnPoint.transform.position;
+        PauseMenuUI.SetActive(false);
     }
 
     public void Exit()
