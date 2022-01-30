@@ -52,7 +52,7 @@ MonoBehaviour:
     AudioMixer: {fileID: 0}
   - name: Jazz
     clip: {fileID: 8300000, guid: d76125ae65e44bf418197766763bb06a, type: 3}
-    volume: 0.5
+    volume: 0.6
     loop: 1
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
