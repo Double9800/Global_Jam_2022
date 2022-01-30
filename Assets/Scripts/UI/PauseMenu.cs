@@ -6,11 +6,14 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-    public GameObject PauseMenuUI;
+    public GameObject PauseMenuUI, HUD;
+    public PlayerHealth MyPlayer;
 
     private void Start()
     {
+        MyPlayer = FindObjectOfType<PlayerHealth>();
         PauseMenuUI.SetActive(false);
+        HUD.SetActive(true);
     }
 
     // Update is called once per frame
@@ -33,21 +36,25 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
+        HUD.SetActive(true);
+        PauseMenuUI.SetActive(false);
         GameIsPaused = false;
     }
     void Pause()
 
     {
-        PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+        HUD.SetActive(false);
+        PauseMenuUI.SetActive(true);
         GameIsPaused = true;
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene("0");
+        Time.timeScale = 1f;
+        //SceneManager.LoadScene(0);
+        MyPlayer.transform.position = MyPlayer.SpawnPoint.transform.position;
     }
 
     public void Exit()
