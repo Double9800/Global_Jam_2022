@@ -43,7 +43,6 @@ public class PlayerHealth : MonoBehaviour
             lifeCounter -= 1;
             Debug.Log(lifeCounter);
             MySpawnPoint.RespawnAction();
-
         }
         else
         {
@@ -51,5 +50,6 @@ public class PlayerHealth : MonoBehaviour
         //qui si schiatta in maniera definitiva
         }
         Instantiate(Poof, deathPosition, Quaternion.identity);
+        AudioManager.instance.Play("CatDeath");
     }
 }

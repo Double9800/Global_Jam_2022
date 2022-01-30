@@ -156,7 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ValLife: 0
-  Sound: 
+  Sound: Pigeon
+  Sound2: Checkpoint
   SpawnPosition: {fileID: 1953665189169971334}
 --- !u!50 &-905304117214842676
 Rigidbody2D:

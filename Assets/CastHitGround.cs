@@ -25,6 +25,10 @@ public class CastHitGround : MonoBehaviour
 
 
         Debug.DrawRay(PosStartTrace.transform.position, -Vector2.up * distance, Color.red);
+        if (hit.collider != null && Fatta == true)
+        {
+            AudioManager.instance.Play("JumpEnd");
+        }
 
         if (hit.collider != null)
         {
