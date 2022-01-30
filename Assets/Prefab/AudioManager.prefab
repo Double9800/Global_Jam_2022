@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Background
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: f1fd8f27377530345a9f32b48c37e223, type: 3}
     volume: 0.5
     loop: 1
     source: {fileID: 0}
