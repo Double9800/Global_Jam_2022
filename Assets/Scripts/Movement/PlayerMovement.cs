@@ -35,8 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
         if (isCrouch == false)
         {
             movementInput = Input.GetAxisRaw("Horizontal");
@@ -48,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKey(KeyCode.C) && isGrounded)
         {
             Debug.Log("Mi accovaccio");
@@ -70,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
             //Mysprite.flipX = false;
             //Myanim.Play("Movement");
             transform.eulerAngles = new Vector3(0, 0, 0);
-
-        } else if (movementInput < 0)
+        }
+        else if (movementInput < 0)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
             //Mysprite.flipX = true;
@@ -81,10 +78,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D) )
         {
             Myanim.SetBool("Move", true);
+            //AudioManager.instance.Play("Walk");
         }
         if (Input.GetKey(KeyCode.A) )
         {
             Myanim.SetBool("Move", true);
+            //AudioManager.instance.Play("Walk");
         }
         if (Input.GetKeyUp(KeyCode.D) )
         {
@@ -96,14 +95,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-
-
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             Myanim.Play("Jump");
+            AudioManager.instance.Play("JumpStart");
             isJumping = true;
             jumpTimeMax = jumpTime;
             rb.velocity = Vector2.up * jumpSpeed;
+            AudioManager.instance.Play("JumpStart");
         }
         if (Input.GetKey(KeyCode.Space)&& isJumping == true)
         {

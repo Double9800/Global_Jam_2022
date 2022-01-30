@@ -44,44 +44,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Background
+  - name: CityBackground
     clip: {fileID: 8300000, guid: f1fd8f27377530345a9f32b48c37e223, type: 3}
     volume: 0.5
     loop: 1
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
   - name: Jazz
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: d76125ae65e44bf418197766763bb06a, type: 3}
     volume: 0.5
     loop: 1
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
   - name: JumpStart
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 1015b4dd588ebee45a5799aaac95affc, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
   - name: Pigeon
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: d38035050b0b402459f258b4174e6df7, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
   - name: Milk
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 38ee64780b7fa624691f1f456ecac33a, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
   - name: JumpEnd
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: b5e4b77402afe9e42be4a56a68eb5fc7, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
     AudioMixer: {fileID: 0}
   - name: Walk
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 8195401038a730b4ebec41561b1d4e7f, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: CatDeath
+    clip: {fileID: 8300000, guid: 5e69109182dbfa840a77908cb66c67af, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Gas
+    clip: {fileID: 8300000, guid: 124605f70e056ec47a67d8331b24f829, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Checkpoint
+    clip: {fileID: 8300000, guid: 08050f67abe012f4093065d1450dbc93, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: CatRespawn
+    clip: {fileID: 8300000, guid: 29b5f756d497a7746bdf823e39a88c15, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}

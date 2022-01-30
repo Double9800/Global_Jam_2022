@@ -7,7 +7,7 @@ public class Checkpoint : MonoBehaviour
 {
     public int ValLife;
     private PlayerHealth MyHealth;
-    public string Sound;
+    public string Sound, Sound2;
     public GameObject SpawnPosition;
 
 
@@ -19,8 +19,9 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag ("Player"))
         {
-            //AudioManager.instance.Play(Sound);
-            if(MyHealth.lifeCounter >= 9)
+            AudioManager.instance.Play(Sound);
+            AudioManager.instance.Play(Sound2);
+            if (MyHealth.lifeCounter >= 9)
             {
                 Debug.Log("Ti Attacchi al cazzo");
             }
