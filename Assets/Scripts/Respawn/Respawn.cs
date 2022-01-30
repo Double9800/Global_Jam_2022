@@ -8,10 +8,12 @@ public class Respawn : MonoBehaviour
     public Vector3 RespawnPosition;
     public GameObject Poof;
     public GameObject PositionPoof;
+    private Animator MyAnim;
     
     private void Awake()
     {
         MyRb = GetComponent<Rigidbody2D>();
+        MyAnim = GetComponent<Animator>();
         
     }
     public void RespawnAction()
@@ -20,5 +22,6 @@ public class Respawn : MonoBehaviour
         MyRb.velocity = Vector3.zero;
         GetComponent<Transform>().position = RespawnPosition;
         Instantiate(Poof, PositionPoof.transform.position, Quaternion.identity);
+        MyAnim.Play("Respawn");
     }
 }

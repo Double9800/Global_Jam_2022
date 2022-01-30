@@ -237,6 +237,8 @@ MonoBehaviour:
   lifeCounter: 0
   deathPlatrofm: {fileID: 1799456235890841700, guid: d39a347bb1de5cf4ab66038e6cfb1366,
     type: 3}
+  Poof: {fileID: 3889947438929664991, guid: 9ac50acf1763cca45ae61e130d28a89a, type: 3}
+  PointPoofSpawn: {fileID: 1970728519410125794}
 --- !u!114 &7417370074912782776
 MonoBehaviour:
   m_ObjectHideFlags: 0
