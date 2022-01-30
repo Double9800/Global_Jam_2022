@@ -67,10 +67,31 @@ PrefabInstance:
       propertyPath: ValLife
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4533501657653032871, guid: 08e8b0ac6c1e7864a8d9bdba0a359dec,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 89d2c4c5b410b0345a63b7d75c652334,
+        type: 3}
     - target: {fileID: 5252180574999960458, guid: 08e8b0ac6c1e7864a8d9bdba0a359dec,
         type: 3}
       propertyPath: m_Name
       value: CheckPoint Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435244472191362105, guid: 08e8b0ac6c1e7864a8d9bdba0a359dec,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975304923015244618, guid: 08e8b0ac6c1e7864a8d9bdba0a359dec,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975304923015244618, guid: 08e8b0ac6c1e7864a8d9bdba0a359dec,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e8b0ac6c1e7864a8d9bdba0a359dec, type: 3}

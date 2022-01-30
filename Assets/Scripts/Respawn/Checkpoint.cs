@@ -29,7 +29,15 @@ public class Checkpoint : MonoBehaviour
             }
             Debug.Log("Entro");
             other.GetComponent<Respawn>().RespawnPosition = GetComponent<Transform>().position;
-            Destroy(gameObject);
+            //Animazione Boom
+            StartCoroutine(Boom());
         }
+    }
+
+    IEnumerator Boom()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Destroy(gameObject);
     }
 }
