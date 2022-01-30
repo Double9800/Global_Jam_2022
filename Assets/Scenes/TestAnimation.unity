@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4562301edc24b794e9ed97a4d583855b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseMenuUI: {fileID: 1829166600}
+  PauseMenuUI: {fileID: 8949615245257089704}
 --- !u!4 &1006362335
 Transform:
   m_ObjectHideFlags: 0
@@ -653,12 +653,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1829166600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8949615247052700847, guid: 72e17a1b723b6bd4388157f86d6c6532,
-    type: 3}
-  m_PrefabInstance: {fileID: 8949615245257089703}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2068631163
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,3 +977,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72e17a1b723b6bd4388157f86d6c6532, type: 3}
+--- !u!1 &8949615245257089704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6894591765412684853, guid: 72e17a1b723b6bd4388157f86d6c6532,
+    type: 3}
+  m_PrefabInstance: {fileID: 8949615245257089703}
+  m_PrefabAsset: {fileID: 0}
