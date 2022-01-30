@@ -43,4 +43,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24712ef38b53a44fb01f17ad07966e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Background
+    clip: {fileID: 0}
+    volume: 0.5
+    loop: 1
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Jazz
+    clip: {fileID: 0}
+    volume: 0.5
+    loop: 1
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: JumpStart
+    clip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Pigeon
+    clip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Milk
+    clip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: JumpEnd
+    clip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
+  - name: Walk
+    clip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+    AudioMixer: {fileID: 0}
