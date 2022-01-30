@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private float movementInput;
     private float jumpTimeMax;
     public float jumpTime;
-    private bool isJumping;
-    private bool isGrounded;
+    public bool isJumping;
+    public bool isGrounded;
     public LayerMask isMask;
     public Transform feet;
     public float radius;
@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 ColliderSizeCrouch ,ColliderPosCrouch,ColliderSizeInitial,ColliderPosInitioal;
     private BoxCollider2D myBox;
     private SpriteRenderer Mysprite;
+    private Animator Myanim;
     
 
     // Start is called before the first frame update
@@ -28,13 +29,12 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myBox = GetComponent<BoxCollider2D>();
         Mysprite = GetComponent<SpriteRenderer>();
+        Myanim = GetComponent<Animator>();
        
     }
 
     private void FixedUpdate()
     {
-
-
         if (isCrouch == false)
         {
             movementInput = Input.GetAxisRaw("Horizontal");
@@ -46,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKey(KeyCode.C) && isGrounded)
         {
             Debug.Log("Mi accovaccio");
@@ -65,22 +64,45 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementInput > 0)
         {
-            Mysprite.flipX = false;
-
-        } else if (movementInput < 0)
+            //Mysprite.flipX = false;
+            //Myanim.Play("Movement");
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (movementInput < 0)
         {
-            Mysprite.flipX = true;
-            
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            //Mysprite.flipX = true;
+            //Myanim.Play("Movement");
         }
 
-        
+        if (Input.GetKey(KeyCode.D) )
+        {
+            Myanim.SetBool("Move", true);
+            //AudioManager.instance.Play("Walk");
+        }
+        if (Input.GetKey(KeyCode.A) )
+        {
+            Myanim.SetBool("Move", true);
+            //AudioManager.instance.Play("Walk");
+        }
+        if (Input.GetKeyUp(KeyCode.D) )
+        {
+            Myanim.SetBool("Move", false);
+        }
+        if (Input.GetKeyUp(KeyCode.A) )
+        {
+            Myanim.SetBool("Move", false);
+        }
 
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
+            Myanim.Play("Jump");
+            AudioManager.instance.Play("JumpStart");
             isJumping = true;
             jumpTimeMax = jumpTime;
             rb.velocity = Vector2.up * jumpSpeed;
+            AudioManager.instance.Play("JumpStart");
         }
         if (Input.GetKey(KeyCode.Space)&& isJumping == true)
         {
@@ -99,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+            
         }
     }
 

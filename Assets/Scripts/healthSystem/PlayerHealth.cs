@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public GameObject deathPlatrofm;
     private Vector3 deathPosition;
     private Respawn MySpawnPoint;
+    public GameObject Poof;
+    public GameObject PointPoofSpawn;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -40,12 +43,13 @@ public class PlayerHealth : MonoBehaviour
             lifeCounter -= 1;
             Debug.Log(lifeCounter);
             MySpawnPoint.RespawnAction();
-
         }
         else
         {
             Debug.Log("Non hai più vite");
         //qui si schiatta in maniera definitiva
         }
+        Instantiate(Poof, deathPosition, Quaternion.identity);
+        AudioManager.instance.Play("CatDeath");
     }
 }
