@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -43,17 +44,18 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Death()
     {
-        if (lifeCounter > 0)
+        if (lifeCounter >= 1)
         {
             Instantiate(deathPlatrofm, deathPosition, Quaternion.identity);
             lifeCounter -= 1;
             Debug.Log(lifeCounter);
             MySpawnPoint.RespawnAction();
         }
-        else
+        if(lifeCounter == 0)
         {
-            Debug.Log("Non hai più vite");
-        //qui si schiatta in maniera definitiva
+           SceneManager.LoadScene(0);
+           transform.position = SpawnPoint.transform.position;
+           lifeCounter = 9;
         }
         Instantiate(Poof, deathPosition, Quaternion.identity);
         AudioManager.instance.Play("CatDeath");

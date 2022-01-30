@@ -54,8 +54,9 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         HUD.SetActive(true);
-        //SceneManager.LoadScene(0);
         MyPlayer.transform.position = MyPlayer.SpawnPoint.transform.position;
+        MyPlayer.lifeCounter = 9;
+        SceneManager.LoadScene(0);
         PauseMenuUI.SetActive(false);
     }
 
