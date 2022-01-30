@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private float movementInput;
     private float jumpTimeMax;
     public float jumpTime;
-    private bool isJumping;
-    private bool isGrounded;
+    public bool isJumping;
+    public bool isGrounded;
     public LayerMask isMask;
     public Transform feet;
     public float radius;
