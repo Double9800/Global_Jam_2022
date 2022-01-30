@@ -8,6 +8,7 @@ public class Checkpoint : MonoBehaviour
     public int ValLife;
     private PlayerHealth MyHealth;
     public string Sound;
+    public GameObject SpawnPosition;
 
 
     private void Start()
@@ -28,7 +29,7 @@ public class Checkpoint : MonoBehaviour
                 MyHealth.lifeCounter += ValLife;
             }
             Debug.Log("Entro");
-            other.GetComponent<Respawn>().RespawnPosition = GetComponent<Transform>().position;
+            other.GetComponent<Respawn>().RespawnPosition = SpawnPosition.transform.position;
             //Animazione Boom
             StartCoroutine(Boom());
         }

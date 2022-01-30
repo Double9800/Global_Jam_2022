@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject deathPlatrofm;
     private Vector3 deathPosition;
     private Respawn MySpawnPoint;
+    
 
     // Start is called before the first frame update
     void Start()

@@ -67,14 +67,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementInput > 0)
         {
-            Mysprite.flipX = false;
+            //Mysprite.flipX = false;
             //Myanim.Play("Movement");
+            transform.eulerAngles = new Vector3(0, 0, 0);
 
         } else if (movementInput < 0)
         {
-            Mysprite.flipX = true;
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            //Mysprite.flipX = true;
             //Myanim.Play("Movement");
-
         }
 
         if (Input.GetKey(KeyCode.D) )
