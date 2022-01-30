@@ -13,8 +13,7 @@ public class Respawn : MonoBehaviour
     private void Awake()
     {
         MyRb = GetComponent<Rigidbody2D>();
-        MyAnim = GetComponent<Animator>();
-        
+        MyAnim = GetComponent<Animator>();      
     }
     public void RespawnAction()
     {
