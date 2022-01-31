@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private float movementInput;
     private float jumpTimeMax;
-    public float jumpTime;
-    public bool isJumping;
+    public float jumpTime,distance;
+    public bool isJumping,Fatta;
     public bool isGrounded;
     public LayerMask isMask;
     public Transform feet;
@@ -20,7 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D myBox;
     private SpriteRenderer Mysprite;
     private Animator Myanim;
-    
+    public GameObject PosStartTrace;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,29 @@ public class PlayerMovement : MonoBehaviour
             movementInput = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(movementInput * speed, rb.velocity.y);
         }
+        RaycastHit2D hit = Physics2D.Raycast(PosStartTrace.transform.position, -Vector2.up * distance, distance);
+        if (hit.collider != null)
+        {
+            isGrounded = true;
+            Debug.Log("preso");
+            Fatta = false;
 
+        }
+        else { isGrounded = false; }
+
+        Debug.DrawRay(PosStartTrace.transform.position, -Vector2.up * distance, Color.red);
+        if (hit.collider != null && Fatta == true)
+        {
+            isGrounded = true;
+            AudioManager.instance.Play("JumpEnd");
+            
+        }
+        else if (hit.collider == null && isGrounded == false && isJumping == false && Fatta == false)
+        {
+
+            Myanim.Play("Respawn");
+            Fatta = true;
+        }
     }
 
     // Update is called once per frame
@@ -60,7 +83,8 @@ public class PlayerMovement : MonoBehaviour
             myBox.size = ColliderSizeInitial;
             myBox.offset = ColliderPosInitioal;
         }
-        isGrounded = Physics2D.OverlapCircle(feet.position, radius, isMask);
+
+        //isGrounded = Physics2D.OverlapCircle(feet.position, radius, isMask);
 
         if (movementInput > 0)
         {
